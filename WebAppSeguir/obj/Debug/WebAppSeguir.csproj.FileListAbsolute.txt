@@ -1,0 +1,7 @@
+C:\Users\Sérgio\OneDrive - i9ti.com.br\TI\Projetos\SEGUIR\SeguirWeb\WebAppSeguir\WebAppSeguir\bin\WebAppSeguir.dll.config
+C:\Users\Sérgio\OneDrive - i9ti.com.br\TI\Projetos\SEGUIR\SeguirWeb\WebAppSeguir\WebAppSeguir\bin\WebAppSeguir.dll
+C:\Users\Sérgio\OneDrive - i9ti.com.br\TI\Projetos\SEGUIR\SeguirWeb\WebAppSeguir\WebAppSeguir\bin\WebAppSeguir.pdb
+C:\Users\Sérgio\OneDrive - i9ti.com.br\TI\Projetos\SEGUIR\SeguirWeb\WebAppSeguir\WebAppSeguir\obj\Debug\WebAppSeguir.csprojAssemblyReference.cache
+C:\Users\Sérgio\OneDrive - i9ti.com.br\TI\Projetos\SEGUIR\SeguirWeb\WebAppSeguir\WebAppSeguir\obj\Debug\WebAppSeguir.csproj.CoreCompileInputs.cache
+C:\Users\Sérgio\OneDrive - i9ti.com.br\TI\Projetos\SEGUIR\SeguirWeb\WebAppSeguir\WebAppSeguir\obj\Debug\WebAppSeguir.dll
+C:\Users\Sérgio\OneDrive - i9ti.com.br\TI\Projetos\SEGUIR\SeguirWeb\WebAppSeguir\WebAppSeguir\obj\Debug\WebAppSeguir.pdb

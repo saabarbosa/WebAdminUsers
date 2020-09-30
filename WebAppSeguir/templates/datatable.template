@@ -1,0 +1,526 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1>Motoristas</h1>
+      </div>
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item">
+            <a href="#">Home</a>
+          </li>
+          <li class="breadcrumb-item active">Motoristas</li>
+          <input type="hidden" id="hdn_codigo" value=""/>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+  <div class="row">
+    <div class="col-12">
+
+      <div class="card">
+        <div class="card-header">
+          <button type='button' class='btn btn-info' id="Novo">
+            <span class='glyphicon fa fa-plus'></span> Novo Motorista
+          </button>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+          <div class="table-responsive">
+            <table id="example1" class="table table-bordered table-striped">
+
+            </table>
+          </div>
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+    </div>
+    <!-- /.col -->
+  </div>
+  <!-- /.row -->
+</section>
+<!-- /.content -->
+
+<!-- Modal Novo -->
+<div class="modal fade" id="NovoModal" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header" style="padding:15px 30px;">
+        <h4>
+          <span class="glyphicon glyphicon-lock"></span> Novo
+        </h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body" style="padding:10px 20px;">
+        <form role="form">
+          <ul class="nav nav-pills">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="pill" href="#usuario_aba">Dados do Usuário</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="pill" href="#motorista_aba">Dados do Motorista</a>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <br/>
+            <div class="tab-pane container active" id="usuario_aba">
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <label for="nome">
+                      <span class="fa fa-user-md"></span> Nome
+                    </label>
+                    <input id="nome" name="nome" placeholder="Informe o nome" type="text" class="form-control" maxlength="80" required="required"/>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <label for="cpf">
+                      <span class="fa fa-envelope-o"></span> E-mail
+                    </label>
+                    <input id="email" name="email" placeholder="Informe o e-mail" type="text" class="form-control" maxlength="150" required="required"/>
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="cpf">
+                      <span class="fa fa-address-card"></span> CPF
+                    </label>
+                    <input id="cpf" name="cpf" placeholder="Informe o CPF" type="text" class="form-control" maxlength="20" required="required"/>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <label for="phone">
+                      <span class="fa fa-phone"></span> Telefone
+                    </label>
+                    <input id="telefone" name="telefone" placeholder="Informe o Telefone" type="text" class="form-control" maxlength="20" required="required"/>
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="user">
+                      <span class="fa fa-user"></span> Usuário
+                    </label>
+                    <input id="usuario" name="usuario" placeholder="Informe o usuário" type="text" class="form-control" maxlength="20" required="required"/>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <label for="pass">
+                      <span class="fa fa-key"></span> Senha
+                    </label>
+                    <input id="senha" name="senha" placeholder="Informe a senha" type="password" class="form-control" maxlength="30" required="required"/>
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="pass">
+                      <span class="fa fa-key"></span> Confirmar Senha
+                    </label>
+                    <input id="senha_confirma" name="senha_confirma" placeholder="Confirme a senha" type="password" class="form-control" maxlength="30" required="required"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane container fade" id="motorista_aba">
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <label for="rg">
+                      <span class="fa fa-address-card"></span> RG
+                    </label>
+                    <input id="rg" name="rg" placeholder="Informe o RG" type="text" class="form-control" maxlength="10"/>
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="orgao_expedidor">
+                      <span class="fa fa-address-card"></span> Órgão Expedidor
+                    </label>
+                    <input id="orgao_expedidor" name="orgao_expedidor" placeholder="Informe o Orgão Expedidor" type="text" class="form-control" maxlength="10" />
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <label for="numero_habilitacao">
+                      <span class="fa fa-address-card"></span> Nº Habilitação
+                    </label>
+                    <input id="numero_habilitacao" name="numero_habilitacao" placeholder="Informe o Nº Habilitação" type="text" class="form-control" maxlength="10" />
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="data_habilitacao">
+                      <span class="fa fa-calendar"></span> Vencimento Habilitação
+                    </label>
+                    <input id="data_habilitacao" name="data_habilitacao" placeholder="Data de Vencimento" type="text" class="form-control" maxlength="10"/>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <button type="button" id="btn_cadastrar_motorista"  class="btn btn-success btn-block">
+              <span class="fa fa-off"></span> Confirmar
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <div id="cad_alert" style="display:none;padding:10px 10px;">
+          <!-- Success Alert -->
+          <div class="alert alert-warning alert-dismissible fade show">
+            <div id="cad_alertMessage"></div>
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+          <span class="fa fa-remove"></span> Cancelar
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal Detalhes -->
+<div class="modal fade" id="DetalhesModal" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header" style="padding:15px 30px;">
+        <h4>
+          <span class="glyphicon glyphicon-lock"></span> Detalhes
+        </h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body" style="padding:10px 20px;">
+        <form role="form">
+          <ul class="nav nav-pills">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="pill" href="#usuario_aba_detalhe">Dados do Usuário</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="pill" href="#motorista_aba_detalhe">Dados do Motorista</a>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <br/>
+            <div class="tab-pane container active" id="usuario_aba_detalhe">
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <label for="label_nome">
+                      <span class="fa fa-user-md"></span> Nome
+                    </label>
+                    <div id="label_nome" name="label_nome"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <label for="label_email">
+                      <span class="fa fa-envelope-o"></span> E-mail
+                    </label>
+                    <div id="label_email" name="label_email"></div>
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="cpf">
+                      <span class="fa fa-address-card"></span> CPF
+                    </label>
+                    <div id="label_cpf" name="label_cpf"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <label for="label_telefone">
+                      <span class="fa fa-phone"></span> Telefone
+                    </label>
+                    <div id="label_telefone" name="telefone"></div>
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="label_user">
+                      <span class="fa fa-user"></span> Usuário
+                    </label>
+
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <label for="label_pass">
+                      <span class="fa fa-key"></span> Senha
+                    </label>
+
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="label_pass_confirma">
+                      <span class="fa fa-key"></span> Confirmar Senha
+                    </label>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane container fade" id="motorista_aba_detalhe">
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <label for="label_rg">
+                      <span class="fa fa-address-card"></span> RG
+                    </label>
+
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="label_oe">
+                      <span class="fa fa-address-card"></span> Órgão Expedidor
+                    </label>
+
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <label for="label_numero_hailitacao">
+                      <span class="fa fa-address-card"></span> Nº Habilitação
+                    </label>
+                    <div id="label_numero_hailitacao" name="label_numero_hailitacao"></div>
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="vh">
+                      <span class="fa fa-calendar"></span> Vencimento Habilitação
+                    </label>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+          <span class="fa fa-remove"></span> Cancelar
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal Excluir -->
+<div class="modal fade" id="DeleteModal"  role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header" style="padding:15px 30px;">
+        <h4>
+          <span class="glyphicon glyphicon-lock"></span> Excluir
+        </h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>Tem certeza que deseja excluir o motorista da cooperativa?</p>
+      </div>
+      <div id="alerta" style="display:none;padding:10px 10px;">
+        <!-- Success Alert -->
+        <div class="alert alert-warning alert-dismissible fade show">
+          <div id="alertMessage"></div>
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" id="btn_excluir">Confirmar</button>&nbsp;
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="btn_excluir_cancelar">Cancelar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- DataTables -->
+<script src="http://www.seguir.com.br/web/plugins/datatables/jquery.dataTables.js"></script>
+<script src="http://www.seguir.com.br/web/plugins/datatables/dataTables.bootstrap4.js"></script>
+<script src="http://www.seguir.com.br/web/plugins/jquery/jquery.mask.min.js"></script>
+<script>
+  var dados;
+  var table;
+
+  $(document).ready(function(){
+
+  $("#cpf").mask("999.999.999-99");
+  $("#telefone").mask("(99)99999-9999");
+  $("#usuario").mask("(99)99999-9999");
+  $("#data_habilitacao").mask("99/99/9999");
+
+  var usuario = sessionStorage.getItem("Chave");
+  var objUser = JSON.parse(usuario);
+
+  var settings = {
+  "url": "http://www.seguir.com.br/seguir/rest/frotaservice/getMotoristasByCooperativa",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+  "Content-Type": "application/json"
+  },
+  oLanguage: {
+  "sUrl" : "https://cdn.datatables.net/plug-ins/1.10.16/i18n/Portuguese-Brasil.json",
+  "sProcessing": "aguarde, carregando..."
+  },
+  "data": JSON.stringify({"key":"123","value":{"emp_nr_id":objUser.usu_nr_id}}),
+  };
+
+  $.ajax(settings).done(function (response) {
+  console.log(response.value);
+  dados=response.value;
+  table = $('#example1').DataTable({
+  data: dados,
+  destroy: false,
+  searching: true,
+  processing: true,
+  paging: true,
+  bRetrieve: true,
+  oLanguage: {
+  "sUrl" : "https://cdn.datatables.net/plug-ins/1.10.16/i18n/Portuguese-Brasil.json",
+  "sProcessing": "aguarde..."
+  },
+  columns: [
+  { title:"Cod", data: "usu_nr_id" },
+  { title: "Nome", data: "usu_tx_nome" },
+  { title: "Login", data: "usu_tx_login" },
+  { title: "E-mail", data: "usu_tx_email" },
+  { title: "Apelido", data: "usu_tx_apelido" },
+  { title: "Cadastro", data: "usu_dt_cadastro" },
+  /*
+  { title: "", data: null, render: function ( data, type, row ) {
+  return "<button type='button' class='btn btn-info' title='Detalhes' id='Detalhes' onClick='DetalhesModal(" + data.usu_nr_id + ");'>
+    <span class='glyphicon fa fa-navicon'></span>
+  </button>";
+  }},
+  { title: "", data: null, render: function ( data, type, row ) {
+  return "<button type='button' class='btn btn-info' title='Editar'>
+    <span class='glyphicon fa fa-edit'></span>
+  </button>";
+  }},*/
+  { title: "", data: null, render: function ( data, type, row ) {
+  return "<button type='button' class='btn btn-danger' title='Excluir' id='Excluir' onClick='ExcluirModal(" + data.usu_nr_id + ");'>
+    <span class='glyphicon fa fa-trash'></span>
+  </button>";
+  }}
+  ]
+  });
+  })
+  .fail(function() {
+  alert( "erro ao chamar o servico." );
+  });
+
+
+  $("#Novo").click(function(){
+  $("#cad_alerta").hide();
+  $("#NovoModal").modal();
+  });
+
+
+  $("#btn_cadastrar_motorista").click(function(){
+  var confirma_senha = $("#senha_confirma").val();
+  var cpf = $("#cpf").val();
+  var email = $("#email").val();
+  var telefone = $("#telefone").val();
+  var usuario = $("#usuario").val();
+  var nome = $("#nome").val();
+  var senha = $("#senha").val();
+  var rg = $("#rg").val();
+  var orgao_expedidor = $("#orgao_expedidor").val();
+  var numero_habilitacao = $("#numero_habilitacao").val();
+  var data_habilitacao = $("#data_habilitacao").val();
+
+  var settings = {
+  "url": "http://www.seguir.com.br/seguir/rest/seguirserviceinterurbano/createMotoristaCompleto",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+  "Content-Type": "application/json"
+  },
+  "data": JSON.stringify({"code":200,"driver":true,"fra_nr_id":1004,
+  "value":{"usuarioT":{
+  "usu_tx_confsenha":confirma_senha,
+  "usu_tx_cpf":cpf,
+  "usu_tx_email":email,
+  "usu_tx_fone":telefone,
+  "usu_tx_login":usuario,
+  "usu_tx_nome":nome,
+  "usu_tx_senha":senha},
+  "motoristaT":{
+  "mot_tx_ng":rg,
+  "emp_nr_id":2,
+  "mot_tx_orgao_expedidor": orgao_expedidor,
+  "mot_tx_habilitacao":numero_habilitacao,
+  "mot_dt_vencimento_habilitacao":data_habilitacao,
+  "lat":0,
+  "lon":0}}}),
+  };
+
+  $.ajax(settings).done(function (response) {
+  console.log(response);
+  $("#cad_alert").show();
+  $("#cad_alertMessage").text(response.message);
+  });
+
+  });
+
+  $("#btn_excluir").click(function(){
+
+  var settings = {
+  "url": "http://www.seguir.com.br/seguir/rest/frotaservice/deleteMotoristaCooperativa",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+  "Content-Type": "application/json"
+  },
+  "data": JSON.stringify({"key":"4321","value":{"usu_nr_id":$("#hdn_codigo").val()}}),
+  };
+
+  $.ajax(settings).done(function (response) {
+  console.log(response);
+  $("#alerta").show();
+  $("#alertMessage").text(response.message);
+  console.log(response.message);
+  });
+
+
+
+  });
+
+
+
+
+
+  });
+
+
+  function ExcluirModal(value){
+  $("#alerta").hide();
+  $("#hdn_codigo").val(value);
+  $("#DeleteModal").modal();
+  }
+
+
+
+
+</script>
+
